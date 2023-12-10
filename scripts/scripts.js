@@ -8,8 +8,9 @@ You are encouraged to use the provided naming convention for ease of review.
 
 /****************** create variables ******************/
 /* create variables to hold the values for modelName and duration */
+var modelname = "XYZ";
+var modelname = 0
 
-// INSERT YOUR CODE HERE
 
 
 
@@ -24,8 +25,12 @@ You are encouraged to use the provided naming convention for ease of review.
         if modelName is currently "CPRG", duration * 213 gives us the new total cost.
     - set the value of the calculated-cost element's innerHTML to this new value
 */
-
-// INSERT YOUR CODE HERE
+function recalculate() {
+    let costlabel = document.getElementById("calculate-cost");
+    let totalcost = (modelname === "XYZ) ? duration * 100 : duration *213;
+                     costLabel.innerHTML = totalcost;
+}
+                     
 
 
 
@@ -44,7 +49,20 @@ You are encouraged to use the provided naming convention for ease of review.
 - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
     // modelButton.addEventListener("click", changeModel);
 
-// INSERT YOUR CODE HERE
+let modelbutton = document.getELementBYID("switch-model");
+modelbutton.addEventlist("click, changemodel);
+
+                         function changemodel() {
+    let modelText = document.getElementById("model-text");
+    if (modelName === "XYZ") {
+        modelname = "CPRG";
+        modelText.innerHTML = "Model CPRG";
+    } else {
+        moelname = "XYZ";
+        modelText.innerHTML = "Model XYZ";
+    }
+    recalculate();
+}
 
 
 
@@ -63,7 +81,14 @@ You are encouraged to use the provided naming convention for ease of review.
     - finally, attach this function to the "Change Duration" pseudo-button, so it runs whenever the button is clicked.
 */
 
-// INSERT YOUR CODE HERE
+let durationbutton = document.getElementBYId("change-duration");
+durationButton.addEventListener("click", changeDuration);
+function changeDuration() {
+    let durationText = document.getElementById("duration-text");
+    duration = parseInt(prompt("Enter new duration:"));
+    durationText.innnerHTML = duration;
+    recalculate();
+}
 
 
 
