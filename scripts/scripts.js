@@ -1,20 +1,7 @@
-/****************** YOUR NAME: 
-
-The instructions describe the missing logic that is needed; you will translate these into JavaScript in the places indicated.
-
-You are encouraged to use the provided naming convention for ease of review.
-
-*/
-
 /****************** create variables ******************/
 /* create variables to hold the values for modelName and duration */
-var modelname = "XYZ";
-var modelname = 0
-
-
-
-
-
+var modelName = "XYZ";
+var duration = 0;
 
 /****************** helper function ******************/
 /* create a function called recalculate() which will
@@ -26,16 +13,10 @@ var modelname = 0
     - set the value of the calculated-cost element's innerHTML to this new value
 */
 function recalculate() {
-    let costlabel = document.getElementById("calculate-cost");
-    let totalcost = (modelname === "XYZ) ? duration * 100 : duration *213;
-                     costLabel.innerHTML = totalcost;
+    let costLabel = document.getElementById("calculated-cost");
+    let totalCost = (modelName === "XYZ") ? duration * 100 : duration * 213;
+    costLabel.innerHTML = totalCost;
 }
-                     
-
-
-
-
-
 
 /****************** model button logic ******************/
 
@@ -47,28 +28,20 @@ function recalculate() {
     - if modelName is currently "CPRG", change the value of modelName to "XYZ", and change the innerHTML of the model-text span element to "Model XYZ"
     - then, recalculate() the total cost.
 - finally, uncomment the following line of JavaScript to have this function run automatically whenever the pseudo-button is clicked: */
-    // modelButton.addEventListener("click", changeModel);
+let modelButton = document.getElementById("switch-model");
+modelButton.addEventListener("click", changeModel);
 
-let modelbutton = document.getELementBYID("switch-model");
-modelbutton.addEventlist("click, changemodel);
-
-                         function changemodel() {
+function changeModel() {
     let modelText = document.getElementById("model-text");
     if (modelName === "XYZ") {
-        modelname = "CPRG";
+        modelName = "CPRG";
         modelText.innerHTML = "Model CPRG";
     } else {
-        moelname = "XYZ";
+        modelName = "XYZ";
         modelText.innerHTML = "Model XYZ";
     }
     recalculate();
 }
-
-
-
-
-
-
 
 /****************** duration button logic ******************/
 /*  - first, create a variable to represent the "Change Duration" pseudo-button.
@@ -77,18 +50,17 @@ modelbutton.addEventlist("click, changemodel);
         - prompt() the user for a new duration
         - save the result of the prompt() to the duration variable
         - change the innerHTML of the duration-text span element to this new value
-        - recalculate() the total cost/
+        - recalculate() the total cost.
     - finally, attach this function to the "Change Duration" pseudo-button, so it runs whenever the button is clicked.
 */
 
-let durationbutton = document.getElementBYId("change-duration");
+let durationButton = document.getElementById("change-duration");
 durationButton.addEventListener("click", changeDuration);
+
 function changeDuration() {
     let durationText = document.getElementById("duration-text");
     duration = parseInt(prompt("Enter new duration:"));
-    durationText.innnerHTML = duration;
+    durationText.innerHTML = duration;
     recalculate();
 }
-
-
 
